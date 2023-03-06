@@ -6,7 +6,9 @@ export default async function handler(req) {
  
 
   return new Response(
-    JSON.stringify(req),
+    JSON.stringify({
+      message: req.headers['true-client-ip'] || req.headers['X-Forwarded-For'],
+    }),
     {
       status: 200,
       headers: {
