@@ -1,9 +1,15 @@
+export const config = {
+  runtime: 'edge',
+}
+
 export default async function handler(req) {
  
+  
+  console.log(req);
 
   return new Response(
     JSON.stringify({
-      message: ['true-client-ip'] || req.headers['X-Forwarded-For'] || req.url,
+      message: 'Hello, world!',
     }),
     {
       status: 200,
