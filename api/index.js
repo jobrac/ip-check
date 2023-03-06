@@ -1,12 +1,10 @@
-export const config = {
-  runtime: 'edge',
-}
-
 export default async function handler(req) {
  
 
   return new Response(
-    JSON.stringify(Object.keys(req)),
+    JSON.stringify({
+      message: ['true-client-ip'] || req.headers['X-Forwarded-For'] || req.url,
+    }),
     {
       status: 200,
       headers: {
