@@ -1,3 +1,7 @@
+export const config = {
+  runtime: 'edge',
+}
+
 export default async function handler(req, event) {
 
     console.log(req.ip)
