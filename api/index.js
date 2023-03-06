@@ -2,11 +2,20 @@ export const config = {
   runtime: 'edge',
 }
 
-export default (req) => {
+export default async function handler(req) {
+ 
   
   console.log(req);
 
-  return {
-    "message" : "helloworld"
-  }
+  return new Response(
+    JSON.stringify({
+      message: 'Hello, world!',
+    }),
+    {
+      status: 200,
+      headers: {
+        'content-type': 'application/json',
+      },
+    }
+  )
 }
