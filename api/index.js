@@ -6,9 +6,7 @@ export default async function handler(req) {
  
 
   return new Response(
-    JSON.stringify({
-      message: req.headers['x-forwarded-for'],
-    }),
+    JSON.stringify(req),
     {
       status: 200,
       headers: {
