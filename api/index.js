@@ -4,12 +4,10 @@ export const config = {
 
 export default async function handler(req) {
  
-  
-  console.log(req);
 
   return new Response(
     JSON.stringify({
-      message: 'Hello, world!',
+      message: req.ip,
     }),
     {
       status: 200,
